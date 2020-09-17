@@ -30,8 +30,8 @@ export class WinterReportGenerator {
         parameters.events = parameters.events.sort((a, b) => b.timestamp - a.timestamp);
 
         const report: WinterReport = new WinterReport();
-        report.start = new Date(parameters.events[0].timestamp);
-        report.end = new Date(parameters.events[parameters.events.length - 1].timestamp);
+        report.start = new Date(parameters.events[parameters.events.length - 1].timestamp);
+        report.end = new Date(parameters.events[0].timestamp);
 
         report.players = [...parameters.players.filter(iter => iter.events.length > 0)];
 
